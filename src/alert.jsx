@@ -52,6 +52,7 @@ const Alert = ({
                     <span aria-hidden="true">&times;</span>
                     <span class="sr-only">Close</span>
                 </button>*/}
+                { dismiss }
                 { showIcon ? <Icon className={ classes.icon } type={ type } /> : null} 
                 { headline ? <span data-growl="title"> { headline }</span> :null} 
                 <span data-growl="message">{ children }</span>
