@@ -16,7 +16,7 @@
   "author": "Chad Lee <npm@chadly.net>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --progress --inline --hot --content-base docs/ --port 1341",
+    "start": "webpack-dev-server --progress --inline --hot --content-base docs/ --port 1341 --host 0.0.0.0",
     "compile": "rimraf lib && babel src -d lib",
     "build": "webpack --progress --bail",
     "lint": "eslint src docs --ext=js,jsx",
@@ -32,7 +32,8 @@
   "dependencies": {
     "react-addons-css-transition-group": ">=0.14 <16",
     "react-jss-preset-civicsource": "1.x",
-    "toetag": "3.x"
+    "toetag": "3.x",
+    "classnames": "^2.2.5"
   },
   "peerDependencies": {
     "react": ">=0.14 <16"

@@ -4,6 +4,7 @@ import { bootstrap } from "toetag";
 import Icon from "./icon";
 
 import useSheet from "react-jss-preset-civicsource";
+import classNames from "classnames";
 
 const styles = {
 	innerAlert: {
@@ -36,6 +37,7 @@ const Alert = ({
 	onDismiss,
 	dismissTitle = "Dismiss",
 	sheet: { classes },
+    className,
 	showIcon = true
 }) => {
 	const isDismissable = !!onDismiss;
@@ -44,7 +46,7 @@ const Alert = ({
 
 	return (
 		<div> {/* this outer div is important so the alerts stack on top of one another... don't delete it */}
-			<div className={css}>
+			<div className={classNames(className, css)}>
 				{dismiss}
 
 				{showIcon ? <Icon className={classes.icon} type={type} /> : null}
