@@ -46,7 +46,18 @@ const Alert = ({
 
 	return (
 		<div> {/* this outer div is important so the alerts stack on top of one another... don't delete it */}
-			<div className={classNames(className, css)}>
+			
+            <div className={ classNames(className, css) } role="alert">
+                {/*<button type="button" class="close" data-growl="dismiss">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>*/}
+                { showIcon ? <Icon className={ classes.icon } type={ type } /> : null} 
+                { headline ? <span data-growl="title"> { headline }</span> :null} 
+                <span data-growl="message">{ children }</span>
+            </div>  
+
+            {/*<div className={ classNames(className, css) }>
 				{dismiss}
 
 				{showIcon ? <Icon className={classes.icon} type={type} /> : null}
@@ -54,7 +65,7 @@ const Alert = ({
 					{headline ? <h4 className={classes.headline}>{headline}</h4> : null}
 					<div className={classes.body}>{children}</div>
 				</div>
-			</div>
+			</div>*/}
 		</div>
 	);
 };
